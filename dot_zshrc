@@ -1,0 +1,58 @@
+source "/opt/homebrew/opt/zsh-git-prompt/zshrc.sh"
+
+PROMPT='%B%m%~%b$(git_super_status) %# '
+
+# Path
+#
+export PATH=/opt/homebrew/opt/node@20/bin:/opt/homebrew/opt/postgresql@14/bin:$PATH
+
+if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+    autoload -Uz compinit
+    compinit
+fi
+
+if which pyenv > /dev/null; then
+    eval "$(pyenv init --path)";
+    if which pyenv-virtualenv-init > /dev/null; then
+        eval "$(pyenv virtualenv-init -)";
+    fi
+fi
+
+# aliases
+# LCS
+alias hub='ssh ms526@phslxhub2.partners.org'
+alias stage-hub='ssh ms526@phslxlcs15.partners.org'
+alias dev-hub='ssh ms526@phslxlcs17.partners.org'
+
+# CPP
+alias elyn='ssh ms526@elyn.partners.org'
+alias elyn-eth='ssh ms526@172.18.243.154'
+alias e1='ssh -oHostKeyAlgorithms=+ssh-rsa ms526@erisone.partners.org'
+alias e2='ssh ms526@eristwo.partners.org'
+alias exdl='ssh ms526@erisxdl.partners.org'
+alias snowsql=/Applications/SnowSQL.app/Contents/MacOS/snowsql
+
+export EDITOR="code"
+export VISUAL="code"
+
+# Python
+#
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+export WORKON_HOME=$HOME/.pyenv/versions/
+export PROJECT_HOME=$HOME/dev
+
+# LCS Dev
+source ~/Documents/Workspace/learn/local/env.sh
+source ~/Documents/Workspace/learn-ops/local/functions.sh
+source ~/Documents/Workspace/bitpress-ops/local/functions.sh
+
+# 1password agent for SSH
+export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+
+# Tutor
+#export TUTOR_ROOT=$HOME/Documents/Development/tutor-openedx/
+
+# awscli auto complete
+#complete -C aws_completer aws
