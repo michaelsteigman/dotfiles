@@ -34,8 +34,8 @@ alias e2='ssh ms526@eristwo.partners.org'
 alias exdl='ssh ms526@erisxdl.partners.org'
 alias snowsql=/Applications/SnowSQL.app/Contents/MacOS/snowsql
 
-export EDITOR="code"
-export VISUAL="code"
+export EDITOR="code --wait"
+export VISUAL="code --wait"
 
 # Python
 #

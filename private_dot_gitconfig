@@ -1,0 +1,33 @@
+[user]
+        name = Michael Steigman
+        email = michael@steigman.net
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID6M+i8M8RdZE5sef0Y94pT20v+0uPevCd/18KxCW3r4
+[push]
+        default = simple
+[core]
+        excludesfile = /Users/ms/.gitignore_global
+	editor = code -n --wait
+[difftool "sourcetree"]
+        cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+        path =
+[mergetool "sourcetree"]
+        cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+        trustExitCode = true
+[filter "lfs"]
+        clean = git-lfs clean %f
+        smudge = git-lfs smudge %f
+        required = true
+[gui]
+        recentrepo = /Users/ms/dev/mgh
+[github]
+	user = michaelsteigman
+[init]
+	defaultBranch = main
+[safe]
+	directory = /opt/app-root/src
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true
