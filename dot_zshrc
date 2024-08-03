@@ -60,7 +60,7 @@ clone_my_repos() {
             return 1
         fi
         pushd
-        cd ~/Documents/Workspace/test-clone
+        cd ~/Documents/Workspace/
         while IFS= read -r REPO; do
             git clone ${=REPO}
         done < ~/Documents/Workspace/.repos
