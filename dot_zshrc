@@ -51,8 +51,21 @@ source ~/Documents/Workspace/bitpress-ops/local/functions.sh
 # 1password agent for SSH
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 
-# Tutor
-#export TUTOR_ROOT=$HOME/Documents/Development/tutor-openedx/
-
-# awscli auto complete
-#complete -C aws_completer aws
+clone_my_repos() {
+    if [ -f "/Users/ms526/Documents/Workspace/.repos" ]; then
+        echo -n "This script will clone the following repos into ~/Documents/Workspace. \n`cat ~/Documents/Workspace/.repos` \nContinue? (y/n) "
+        read REPLY
+        if [[ $REPLY =~ ^[Nn]$ ]]; then
+            echo "Canceled."
+            return 1
+        fi
+        pushd
+        cd ~/Documents/Workspace/test-clone
+        while IFS= read -r REPO; do
+            git clone ${=REPO}
+        done < ~/Documents/Workspace/.repos
+        popd
+    else
+        echo "No .repos file found in ~/Documents/Workspace."
+    fi
+}
