@@ -52,7 +52,7 @@ source ~/Documents/Workspace/bitpress-ops/local/functions.sh
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 
 clone_my_repos() {
-    if [ -f "/Users/ms526/Documents/Workspace/.repos" ]; then
+    if [ -f ~/Documents/Workspace/.repos ]; then
         echo -n "This script will clone the following repos into ~/Documents/Workspace. \n`cat ~/Documents/Workspace/.repos` \nContinue? (y/n) "
         read REPLY
         if [[ $REPLY =~ ^[Nn]$ ]]; then
@@ -62,6 +62,8 @@ clone_my_repos() {
         pushd
         cd ~/Documents/Workspace/
         while IFS= read -r REPO; do
+            # syntax below splits the string, which in 
+            # some cases contains a name for the directory
             git clone ${=REPO}
         done < ~/Documents/Workspace/.repos
         popd
