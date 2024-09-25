@@ -32,6 +32,7 @@ alias elyn-eth='ssh ms526@172.18.243.154'
 alias e1='ssh -oHostKeyAlgorithms=+ssh-rsa ms526@erisone.partners.org'
 alias e2='ssh ms526@eristwo.partners.org'
 alias exdl='ssh ms526@erisxdl.partners.org'
+alias awing='ssh ms526@awing.partners.org'
 alias snowsql=/Applications/SnowSQL.app/Contents/MacOS/snowsql
 
 export EDITOR="code --wait"

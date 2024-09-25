@@ -2,6 +2,7 @@ tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "ms526/local"
 tap "powershell/tap"
 brew "azure-cli"
 brew "chezmoi"
@@ -28,6 +29,7 @@ brew "ms526/local/libxmlsec1@1.2.37"
 brew "powershell/tap/powershell"
 cask "1password-cli"
 cask "apache-directory-studio"
+cask "connectmenow"
 cask "dash"
 cask "dbeaver-community"
 cask "docker"
@@ -35,6 +37,7 @@ cask "dropbox"
 cask "firefox"
 cask "google-chrome"
 cask "miniforge"
+cask "obsidian"
 cask "roam-research"
 cask "snowflake-snowsql"
 cask "visual-studio-code"
@@ -51,3 +54,4 @@ mas "Slack", id: 803453959
 mas "Spark", id: 1176895641
 mas "Trello", id: 1278508951
 mas "Xcode", id: 497799835
+
