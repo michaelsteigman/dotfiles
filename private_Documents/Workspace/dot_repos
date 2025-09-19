@@ -1,6 +1,7 @@
 git@github.com:hubswheel/bitpress.git
 git@github.com:hubswheel/bitpress-ops.git
 git@github.com:michaelsteigman/coderedcms.git
+git@gitlab.partners.org:center-for-precision-psychiatry/data-science/elyn.git
 git@gitlab.partners.org:ms526/dataquest-work.git
 git@github.com:hubswheel/grouper.git
 git@github.com:hubswheel/grouper-ops.git
@@ -11,3 +12,4 @@ git@github.com:eldarion-client/mgh.git learn
 git@github.com:hubswheel/learn-ops.git
 git@github.com:michaelsteigman/openshift-ops-template.git
 git@github.com:Mood-and-Behavior-Lab/social-media-PII-scrubber.git scrubber
+git@github.com:yihansheu/causal_graph_generation.git
