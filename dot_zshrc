@@ -4,7 +4,7 @@ PROMPT='%B%m%~%b$(git_super_status) %# '
 
 # Path
 #
-export PATH=/opt/homebrew/opt/node@20/bin:/opt/homebrew/opt/postgresql@14/bin:$PATH
+export PATH=~/.local/bin:/opt/homebrew/opt/node@20/bin:/opt/homebrew/opt/postgresql@14/bin:$PATH
 
 if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
@@ -27,7 +27,7 @@ alias stage-hub='ssh ms526@phslxlcs15.partners.org'
 alias dev-hub='ssh ms526@phslxlcs17.partners.org'
 
 # CPP
-alias elyn='ssh ms526@elyn.partners.org'
+alias elyn='ssh ms526@elyn.mgb.org'
 alias elyn-eth='ssh ms526@172.18.243.154'
 alias e1='ssh -oHostKeyAlgorithms=+ssh-rsa ms526@erisone.partners.org'
 alias e2='ssh ms526@eristwo.partners.org'
@@ -72,3 +72,8 @@ clone_my_repos() {
         echo "No .repos file found in ~/Documents/Workspace."
     fi
 }
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/ms526/.lmstudio/bin"
+# End of LM Studio CLI section
+
