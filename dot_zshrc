@@ -63,9 +63,18 @@ clone_my_repos() {
         pushd
         cd ~/Documents/Workspace/
         while IFS= read -r REPO; do
-            # syntax below splits the string, which in 
+            # syntax below splits the string, which in
             # some cases contains a name for the directory
-            git clone ${=REPO}
+            local repo_parts=(${=REPO})
+            local repo_url=${repo_parts[1]}
+            local target_dir=${repo_parts[2]:-$(basename ${repo_url} .git)}
+
+            if [[ -d "$target_dir" ]]; then
+                echo "Directory '$target_dir' already exists, skipping..."
+            else
+                echo "Cloning $repo_url into $target_dir"
+                git clone ${=REPO}
+            fi
         done < ~/Documents/Workspace/.repos
         popd
     else
