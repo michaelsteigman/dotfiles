@@ -1,0 +1,9 @@
+Host eristwofs.partners.org
+  HostName eristwofs.partners.org
+  User ms526
+  ForwardAgent yes
+
+Host eristwo.partners.org
+  HostName eristwo.partners.org
+  User ms526
+  ForwardAgent yes
