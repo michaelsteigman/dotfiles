@@ -19,6 +19,7 @@ brew "kustomize"
 brew "libiodbc"
 brew "libpostal"
 brew "mas"
+brew "mise"
 brew "node@20"
 brew "openshift-cli"
 brew "pandoc"
@@ -70,3 +71,4 @@ mas "Spark", id: 1176895641
 mas "Spark Desktop", id: 6445813049
 mas "Trello", id: 1278508951
 mas "Xcode", id: 497799835
+
