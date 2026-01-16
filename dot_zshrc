@@ -57,6 +57,7 @@ export VISUAL="code --wait"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export WORKON_HOME=$HOME/.pyenv/versions/
 export PROJECT_HOME=$HOME/dev
+export CONTEXT7_API_KEY=ctx7sk-c5ac3fd7-b332-46cb-9d6e-f39cab2fd647
 
 # LCS Dev
 source ~/Documents/Workspace/learn/local/env.sh
