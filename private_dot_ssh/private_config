@@ -1,3 +1,7 @@
+Host elyn.mgb.org
+  HostName elyn.mgb.org
+  User ms526
+
 Host eristwofs.partners.org
   HostName eristwofs.partners.org
   User ms526

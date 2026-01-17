@@ -27,12 +27,15 @@ FPATH=$BP/share/zsh-completions:$FPATH
 autoload -Uz compinit
 compinit
 
+# Python environment management with pyenv/mise
 if which pyenv > /dev/null; then
     eval "$(pyenv init --path)";
     if which pyenv-virtualenv-init > /dev/null; then
         eval "$(pyenv virtualenv-init -)";
     fi
 fi
+
+eval "$(mise activate zsh)"
 
 # aliases
 # LCS
@@ -57,7 +60,10 @@ export VISUAL="code --wait"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export WORKON_HOME=$HOME/.pyenv/versions/
 export PROJECT_HOME=$HOME/dev
-export CONTEXT7_API_KEY=ctx7sk-c5ac3fd7-b332-46cb-9d6e-f39cab2fd647
+
+# API Keys
+#
+export CONTEXT7_API_KEY=`op read "op://Primary/Context7 API Key/credential"`
 
 # LCS Dev
 source ~/Documents/Workspace/learn/local/env.sh
@@ -96,3 +102,8 @@ clone_my_repos() {
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/ms526/.lmstudio/bin"
+# End of LM Studio CLI section
+
