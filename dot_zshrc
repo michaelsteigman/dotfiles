@@ -7,15 +7,15 @@ fi
 
 # Zsh configuration file
 
+# set brew prefix for use throughout (hardcoded to avoid subprocess on every shell start)
+BP="/opt/homebrew"
+
 # Path
 #
 export PATH="$HOME/.local/bin:$HOME/.lmstudio/bin:$BP/opt/node@20/bin:$BP/opt/postgresql@14/bin:$PATH"
 
 # 1password agent for SSH
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
-
-# set brew prefix for use throughout
-BP="$(brew --prefix)"
 
 # zsh plugins and themes
 source "$BP/share/powerlevel10k/powerlevel10k.zsh-theme"
@@ -27,27 +27,19 @@ FPATH=$BP/share/zsh-completions:$FPATH
 autoload -Uz compinit
 compinit
 
-# Python environment management with pyenv/mise
-if which pyenv > /dev/null; then
-    eval "$(pyenv init --path)";
-    if which pyenv-virtualenv-init > /dev/null; then
-        eval "$(pyenv virtualenv-init -)";
-    fi
-fi
-
 eval "$(mise activate zsh)"
 
 # aliases
 # LCS
-alias hub='ssh ms526@phslxhub2.partners.org'
-alias stage-hub='ssh ms526@phslxlcs15.partners.org'
-alias dev-hub='ssh ms526@phslxlcs17.partners.org'
+alias hub='ssh phslxhub2'
+alias stage-hub='ssh phslxlcs15'
+alias dev-hub='ssh phslxlcs17'
 
 # CPP
-alias elyn='ssh ms526@elyn.mgb.org'
+alias elyn='ssh elyn'
 alias elyn-eth='ssh ms526@172.18.243.154'
 alias e1='ssh -oHostKeyAlgorithms=+ssh-rsa ms526@erisone.partners.org'
-alias e2='ssh ms526@eristwo.partners.org'
+alias e2='ssh eristwo'
 alias exdl='ssh ms526@erisxdl.partners.org'
 alias awing='ssh ms526@awing.partners.org'
 alias snowsql=/Applications/SnowSQL.app/Contents/MacOS/snowsql
@@ -57,18 +49,20 @@ export VISUAL="code --wait"
 
 # Python
 #
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-export WORKON_HOME=$HOME/.pyenv/versions/
 export PROJECT_HOME=$HOME/dev
 
-# API Keys
-#
-export CONTEXT7_API_KEY=`op read "op://Primary/Context7 API Key/credential"`
+# API Keys — lazy-loaded from 1Password (runs once on first prompt, then removes itself)
+_load_op_secrets() {
+    export CONTEXT7_API_KEY=$(op read "op://Primary/Context7 API Key/credential" 2>/dev/null)
+    export ELSEVIER_API_KEY=$(op read "op://Primary/Elseivier API Key/credential" 2>/dev/null)
+    precmd_functions=(${precmd_functions:#_load_op_secrets})
+}
+precmd_functions+=(_load_op_secrets)
 
 # LCS Dev
-source ~/Documents/Workspace/learn/local/env.sh
-source ~/Documents/Workspace/learn-ops/local/functions.sh
-source ~/Documents/Workspace/bitpress-ops/local/functions.sh
+source ~/Projects/learn/local/env.sh
+source ~/Projects/learn-ops/local/functions.sh
+source ~/Projects/bitpress-ops/local/functions.sh
 
 clone_my_repos() {
     if [ -f ~/Documents/Workspace/.repos ]; then
@@ -107,3 +101,4 @@ clone_my_repos() {
 export PATH="$PATH:/Users/ms526/.lmstudio/bin"
 # End of LM Studio CLI section
 
+export HOMEBREW_CASK_OPTS="--appdir=~/Applications"

@@ -1,13 +1,41 @@
-Host elyn.mgb.org
+Host elyn elyn.mgb.org
   HostName elyn.mgb.org
   User ms526
+  ForwardAgent yes
 
-Host eristwofs.partners.org
+Host eristwofs
   HostName eristwofs.partners.org
   User ms526
   ForwardAgent yes
 
-Host eristwo.partners.org
+Host eristwo
   HostName eristwo.partners.org
   User ms526
+  ForwardAgent yes
+
+Host nucleus
+  HostName eris2n7.research.partners.org
+  User ms526
+  ForwardAgent yes
+
+# dev hub
+Host phslxlcs17
+  HostName phslxlcs17.partners.org
+  User ms526
+  ForwardAgent yes
+
+# prod hub
+Host phslxhub2
+  HostName phslxhub2.partners.org
+  User ms526
+  ForwardAgent yes
+
+# stage hub
+Host phslxlcs15
+  HostName phslxlcs15.partners.org
+  User ms526
+  ForwardAgent yes
+
+Host *
+  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
   ForwardAgent yes

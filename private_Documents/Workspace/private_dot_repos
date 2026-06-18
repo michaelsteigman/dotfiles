@@ -1,0 +1,24 @@
+# CPP
+git@gitlab.partners.org:center-for-precision-psychiatry/ops-utils/800-171-mac-rollout-kit.git
+git@github.com:DAGForge-Team/DAGForge.git cgg
+git@gitlab.partners.org:center-for-precision-psychiatry/data-science/elyn.git
+git@github.com:MABLlab/imazing-project.git imazing
+git@gitlab.partners.org:center-for-precision-psychiatry/ops/jobdeck.git
+git@github.com:Mood-and-Behavior-Lab/social-media-PII-scrubber.git scrubber
+git@gitlab.partners.org:center-for-precision-psychiatry/data-science/sitb-article-classifier.git sitb-meta
+git@github.com:ck37/hands-on-precision-psychiatry-ai.git
+
+# LCS
+git@github.com:hubswheel/bitpress.git
+git@github.com:hubswheel/bitpress-ops.git
+git@github.com:eldarion-client/mgh.git learn
+git@github.com:hubswheel/learn-ops.git
+git@github.com:hubswheel/grouper.git
+git@github.com:hubswheel/grouper-ops.git
+git@github.com:hubswheel/hub.git
+git@github.com:michaelsteigman/coderedcms.git
+
+# Personal / Professional Development
+git@github.com:michaelsteigman/head-first-python-patterns.git
+git@gitlab.partners.org:ms526/dataquest-work.git
+git@github.com:michaelsteigman/openshift-ops-template.git
