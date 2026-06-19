@@ -28,8 +28,6 @@ brew "git"
 brew "glab"
 # Kubernetes package manager
 brew "helm"
-# C/C++ and Java libraries for Unicode and globalization
-brew "icu4c@76"
 # Static analysis tool for Kubernetes YAML files and Helm charts
 brew "kube-linter"
 # Template-free customization of Kubernetes YAML manifests
