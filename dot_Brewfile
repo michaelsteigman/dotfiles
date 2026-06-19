@@ -104,8 +104,6 @@ cask "firefox"
 cask "github-copilot-app"
 # Web browser
 cask "google-chrome"
-# Vector graphics editor
-cask "inkscape"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2@beta"
 # Discover, download, and run local LLMs
@@ -120,8 +118,6 @@ cask "miniforge"
 cask "positron"
 # Collaboration platform for API development
 cask "postman"
-# Note-taking tool for networked thought
-cask "roam-research"
 # Command-line client for connecting to Snowflake
 cask "snowflake-snowsql"
 # Open-source code editor
@@ -136,7 +132,6 @@ mas "Keynote", id: 409183694
 mas "KubeContext", id: 1438838068
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "Sky Follower Bridge", id: 6738878242
 mas "Slack", id: 803453959
 mas "Spark", id: 1176895641
 mas "Spark Desktop", id: 6445813049
