@@ -82,6 +82,8 @@ brew "zsh-completions"
 cask "1password-cli"
 # Eclipse-based LDAP browser and directory client
 cask "apache-directory-studio"
+# Open source, extensible AI agent that goes beyond code suggestions
+cask "block-goose"
 # Terminal-based AI coding assistant
 cask "claude-code@latest"
 # OpenAI's Codex desktop app for managing coding agents
