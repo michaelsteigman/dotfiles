@@ -47,6 +47,16 @@ After staging changes into the source dir:
 
 Write a real commit message describing the change (e.g. "update p10k theme, add ripgrep to Brewfile"), not a generic "updates".
 
+## Sync on another machine (pull latest)
+
+To bring a second machine up to date with what was pushed:
+1. `chezmoi update` — pulls the latest commits into the source dir **and** applies them in one step. This is the usual sync command.
+2. Or, to inspect before writing: `chezmoi git pull` → `chezmoi diff` → `chezmoi apply`.
+
+Caveat: `apply` overwrites live files with the repo version. If the other machine has its own local drift, `apply` will clobber it. Always `chezmoi diff` first — `-` lines are what would be lost, `+` lines are what the repo would write. If that machine is actually ahead on something, `chezmoi re-add` it before applying.
+
+Note on `settings.json`: tracking `~/.claude/settings.json` couples machines to compatible Claude Code versions. Newer hook events (e.g. `PermissionRequest`, `StopFailure`) will error at launch on an older Claude Code. Keep machines on the same Claude Code version, or move version-sensitive hooks to `settings.local.json` (machine-local, not chezmoi-tracked).
+
 ## New-machine bootstrap (reference)
 
 If the user is setting up a fresh Mac:
