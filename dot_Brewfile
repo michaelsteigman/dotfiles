@@ -1,67 +1,132 @@
-tap "homebrew/bundle"
-tap "homebrew/services"
-tap "powershell/tap"
+# Microsoft Azure CLI 2.0
 brew "azure-cli"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
+# Manage your dotfiles across multiple diverse machines, securely
 brew "chezmoi"
+# Cross-platform make
 brew "cmake"
+# Bash completion for Django
 brew "django-completion"
+# Convert text between DOS, UNIX, and Mac formats
 brew "dos2unix"
+# Select default apps for documents and URL schemes on macOS
 brew "duti"
+# AST-based pattern checker for JavaScript
 brew "eslint"
+# Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
+# Libpcap-based NetFlow probe
 brew "fprobe"
+# GNU compiler collection
 brew "gcc@11"
+# GitHub command-line tool
 brew "gh"
+# Distributed revision control system
 brew "git"
+# Open-source GitLab command-line tool
 brew "glab"
+# Kubernetes package manager
 brew "helm"
+# C/C++ and Java libraries for Unicode and globalization
 brew "icu4c@76"
+# Static analysis tool for Kubernetes YAML files and Helm charts
 brew "kube-linter"
+# Template-free customization of Kubernetes YAML manifests
 brew "kustomize"
+# Database connectivity layer based on ODBC. (alternative to unixodbc)
 brew "libiodbc"
+# Library for parsing/normalizing street addresses around the world
 brew "libpostal"
+# Mac App Store command-line interface
 brew "mas"
+# CLI for Mermaid library
+brew "mermaid-cli"
+# Polyglot runtime manager (asdf rust clone)
 brew "mise"
-brew "node@20"
+# OpenShift command-line interface tools
 brew "openshift-cli"
+# Swiss-army knife of markup format conversion
 brew "pandoc"
+# Package compiler and linker metadata toolkit
 brew "pkgconf"
+# Tool for managing OCI containers and pods
 brew "podman"
-brew "postgresql@14", restart_service: :changed
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
+# Theme for zsh
 brew "powerlevel10k"
+# Python version management
 brew "pyenv"
-brew "python@3.11"
+# Software environment for statistical computing
 brew "r"
+# Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# OCR (Optical Character Recognition) engine
+brew "tesseract"
+# Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Extremely fast Python package installer and resolver, written in Rust
 brew "uv"
+# Internet file retriever
 brew "wget"
+# General-purpose lossless data-compression library
 brew "zlib"
+# Real-time type-ahead completion for Zsh
 brew "zsh-autocomplete"
+# Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
+# Additional completion definitions for zsh
 brew "zsh-completions"
-brew "powershell/tap/powershell"
+# Command-line interface for 1Password
 cask "1password-cli"
+# Eclipse-based LDAP browser and directory client
 cask "apache-directory-studio"
-cask "block-goose"
-cask "claude-code"
+# Terminal-based AI coding assistant
+cask "claude-code@latest"
+# OpenAI's Codex desktop app for managing coding agents
+cask "codex-app"
+# Mount network shares quick and easy
 cask "connectmenow"
+# Brings the power of Copilot coding agent directly to your terminal
+cask "copilot-cli@prerelease"
+# Write, edit, and chat about your code with AI
 cask "cursor"
+# API documentation browser and code snippet manager
 cask "dash"
+# Universal database tool and SQL client
 cask "dbeaver-community"
-cask "docker-desktop"
+# Client for the Dropbox cloud storage service
 cask "dropbox"
+# Web browser
 cask "firefox"
+# Native client for GitHub Copilot
+cask "github-copilot-app"
+# Web browser
 cask "google-chrome"
+# Vector graphics editor
+cask "inkscape"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2@beta"
+# Discover, download, and run local LLMs
 cask "lm-studio"
+# Privacy-first, open-source platform for knowledge sharing and management
 cask "logseq"
+# Markdown editor
+cask "markedit"
+# Minimal installer for conda specific to conda-forge
 cask "miniforge"
-cask "obsidian"
+# Data science IDE
 cask "positron"
+# Collaboration platform for API development
 cask "postman"
+# Note-taking tool for networked thought
 cask "roam-research"
+# Command-line client for connecting to Snowflake
 cask "snowflake-snowsql"
+# Open-source code editor
 cask "visual-studio-code"
+# Video communication and virtual meeting platform
 cask "zoom"
 mas "1Password for Safari", id: 1569813296
 mas "Evernote", id: 406056744
@@ -77,4 +142,3 @@ mas "Spark", id: 1176895641
 mas "Spark Desktop", id: 6445813049
 mas "Trello", id: 1278508951
 mas "Xcode", id: 497799835
-
