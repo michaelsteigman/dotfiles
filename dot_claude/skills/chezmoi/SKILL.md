@@ -31,9 +31,10 @@ Prefer editing the source and applying, so the repo stays the source of truth:
 2. Confirm it landed: `chezmoi managed | grep <file>`.
 
 ### Refresh the Brewfile
-1. `brew bundle dump --global --force` (writes `~/.Brewfile`).
-2. Remove VS Code extension lines from `~/.Brewfile` unless the user wants them (the dump includes `vscode "..."` entries the user has historically trimmed).
-3. `chezmoi add ~/.Brewfile`.
+The user does not run the dump themselves — Claude runs it on request (e.g. "update/sync my Brewfile").
+1. `brew bundle dump --global --force --no-dump-vscode --no-dump-npm` (writes `~/.Brewfile` from currently-installed packages; `--no-dump-vscode` and `--no-dump-npm` keep VS Code extensions and global npm packages out of the dump, so no manual trimming is needed).
+2. A dump reflects what's installed *right now* — it drops anything uninstalled and won't carry hand-added `tap` lines. Run `chezmoi diff ~/.Brewfile` and show the user the net adds/removes before committing, so an unexpected drop gets caught.
+3. `chezmoi re-add ~/.Brewfile`, then commit and push.
 
 ### Pull in changes made directly on the system
 If the user edited a dotfile in place (not via chezmoi), re-add it: `chezmoi add ~/.<file>`, then commit.
