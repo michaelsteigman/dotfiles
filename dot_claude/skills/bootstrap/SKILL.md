@@ -13,24 +13,30 @@ Set up recurring monitoring and background tasks at the start of a new session.
 
 Read `~/Documents/Logseq/pages/Digital Assistant.md` and follow the instructions under **## Loop Instructions**. Ignore the **## Ideas and Notes** section.
 
-### 2. Start journal monitoring loop
+### 2. Start the recurring loops
 
-Using the instructions from the Digital Assistant page, invoke the loop skill:
+The Loop Instructions section defines one or more loops, each as its own `###` subsection with its own `interval::` (currently the **Strategic Loop** and the **Laptop Maintenance Loop**). Start each one.
+
+For each loop subsection:
+- Read its `interval::` from that subsection's Schedule.
+- Construct the loop prompt from all of that subsection's rules.
+- Check `CronList` first — if a loop with that purpose is already running, skip it (don't duplicate).
+- Start it via the loop skill:
 
 ```
-/loop <interval from Digital Assistant page> <constructed prompt based on Digital Assistant loop instructions>
+/loop <interval> <constructed prompt for that loop>
 ```
 
-- Read the `interval::` property from the Schedule section to determine the loop frequency
-- Construct the prompt from all rules on the page: what to check, quadrant prioritization, work/personal focus, active check-in and time tracking, and response style
-- The journal path is `~/Documents/Logseq/journals/YYYY_MM_DD.md`
+Notes for constructing each prompt:
+- **Strategic Loop** (`6h`): fold in the run-order rituals (vacation check, first-of-month Monthly Goals dialog, Monday kickoff, Friday retrospective), the two daily **chat-only** nudges (morning priorities + late-afternoon don't-lose-track sweep), light time tracking (DOING/DONE, no CLOCK), and response style. Journal path is `~/Documents/Logseq/journals/YYYY_MM_DD.md`.
+- **Laptop Maintenance Loop** (`4h`): fold in the `brew upgrade -y` step (the `-y` is required, see the page) and the alert-only chezmoi checks.
 
 ### 3. Confirm
 
-After the loop is running, briefly confirm that the session is bootstrapped and the loop is active. Keep it short — one or two lines.
+After the loops are running, briefly confirm that the session is bootstrapped and which loops are active. Keep it short — one or two lines.
 
 ### Important notes
 
-- If the loop skill is unavailable, fall back to manually creating the cron via CronCreate with the appropriate cron expression for the interval and the constructed prompt.
-- The loop is session-only — it dies when Claude exits. Each new session needs a fresh `/bootstrap`.
-- Do not start duplicate loops. If a journal monitoring loop is already running (check via CronList), skip step 2 and note that it's already active.
+- If the loop skill is unavailable, fall back to manually creating each cron via CronCreate with the appropriate cron expression for the interval and the constructed prompt.
+- The loops are session-only — they die when Claude exits. Each new session needs a fresh `/bootstrap`.
+- Do not start duplicate loops. Check `CronList` first; if a given loop (Strategic or Laptop Maintenance) is already running, skip starting that one and note it's already active.
