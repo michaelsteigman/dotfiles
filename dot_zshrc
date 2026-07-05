@@ -55,6 +55,7 @@ export PROJECT_HOME=$HOME/dev
 _load_op_secrets() {
     export CONTEXT7_API_KEY=$(op read "op://Primary/Context7 API Key/credential" 2>/dev/null)
     export ELSEVIER_API_KEY=$(op read "op://Primary/Elseivier API Key/credential" 2>/dev/null)
+    export HA_MCP_URL=$(op read "op://Primary/Baumhaus HA MCP URL/url" 2>/dev/null)
     precmd_functions=(${precmd_functions:#_load_op_secrets})
 }
 precmd_functions+=(_load_op_secrets)

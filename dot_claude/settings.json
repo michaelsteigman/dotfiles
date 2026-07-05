@@ -116,8 +116,8 @@
       }
     }
   },
+  "tui": "fullscreen",
   "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
-  "voiceEnabled": true,
-  "tui": "fullscreen"
+  "voiceEnabled": true
 }

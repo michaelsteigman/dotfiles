@@ -1,5 +1,7 @@
 Host elyn elyn.mgb.org
   HostName elyn.mgb.org
+  ConnectTimeout 30
+  ServerAliveInterval 5
   User ms526
   ForwardAgent yes
 
@@ -35,6 +37,10 @@ Host phslxlcs15
   HostName phslxlcs15.partners.org
   User ms526
   ForwardAgent yes
+
+Host ha
+  HostName 192.168.4.57
+  User root
 
 Host *
   IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
