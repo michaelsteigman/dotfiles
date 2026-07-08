@@ -1,0 +1,10 @@
+# Put Homebrew on PATH for ALL shell contexts, including non-interactive shells
+# (scripts, `zsh -c`, launchd/IDE subprocesses) that source only .zshenv — not
+# .zprofile (login shells) or .zshrc (interactive shells).
+#
+# Hardcoded rather than `eval "$(brew shellenv)"` to avoid a subprocess on every
+# shell start, and guarded so it never duplicates when a login shell later runs
+# `brew shellenv` in .zprofile (path_helper dedups an entry that's already present).
+if [[ ":$PATH:" != *":/opt/homebrew/bin:"* ]]; then
+  export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+fi
