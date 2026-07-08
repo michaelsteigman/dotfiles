@@ -12,7 +12,8 @@ BP="/opt/homebrew"
 
 # Path
 #
-export PATH="$HOME/.local/bin:$HOME/.lmstudio/bin:$HOME/Applications/iTerm.app/Contents/Resources/utilities:$PATH"
+# $BP/bin:$BP/sbin ensures Homebrew is on PATH for non-login shells too (.zprofile only covers login shells)
+export PATH="$HOME/.local/bin:$HOME/.lmstudio/bin:$HOME/Applications/iTerm.app/Contents/Resources/utilities:$BP/bin:$BP/sbin:$PATH"
 
 # 1password agent for SSH
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
